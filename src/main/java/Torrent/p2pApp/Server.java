@@ -13,8 +13,8 @@ public class Server {
 
 	public static void main( String[] args ) throws IOException, NoSuchAlgorithmException
     {
-        System.out.println( "Hello World!" );
-        
+		
+        System.out.println("File: " + args[0]);
      // First, instantiate a Tracker object with the port you want it to listen on.
     	// The default tracker port recommended by the BitTorrent protocol is 6969.
     	Tracker tracker = new Tracker(new InetSocketAddress(6969));
@@ -27,7 +27,7 @@ public class Server {
     	  }
     	};
 
-    	for (File f : new File("./Data/").listFiles(filter)) {
+    	for (File f : new File(args[0]).listFiles(filter)) {
     	  tracker.announce(TrackedTorrent.load(f));
     	}
 

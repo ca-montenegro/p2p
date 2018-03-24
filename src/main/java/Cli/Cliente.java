@@ -1,4 +1,4 @@
-package Torrent.p2pApp;
+package Cli;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,8 +23,8 @@ public class Cliente {
           // Load the torrent from the torrent file and use the given
           // output directory. Partials downloads are automatically recovered.
           SharedTorrent.fromFile(
-            new File("/path/to/your.torrent"),
-            new File("/path/to/output/directory")));
+            new File("./Data/sintel.torrent"),
+            new File("./Data/")));
 
         // You can optionally set download/upload rate limits
         // in kB/second. Setting a limit to 0.0 disables rate
